@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { useMutation } from '../hooks/useApi'
-import { authAPI } from '../services/api'
 import './Auth.css'
 
 interface LoginFormData {
@@ -14,16 +12,17 @@ interface RegisterFormData {
   fullName: string
 }
 
+// Demo mode - không cần backend
+const DEMO_MODE = true
+
 export function LoginForm() {
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: ''
   })
   const [successMessage, setSuccessMessage] = useState('')
-
-  const { mutate: login, loading, error } = useMutation(
-    (data: LoginFormData) => authAPI.login(data.email, data.password)
-  )
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -32,18 +31,31 @@ export function LoginForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    try {
-      const response: any = await login(formData)
-      localStorage.setItem('token', response.token)
-      localStorage.setItem('user', JSON.stringify(response.user))
-      setSuccessMessage('Đăng nhập thành công!')
-      setFormData({ email: '', password: '' })
-      // Redirect to dashboard
-      setTimeout(() => window.location.href = '/dashboard', 1500)
-    } catch (err) {
-      console.error('Login failed:', err)
+    setError('')
+    
+    if (DEMO_MODE) {
+      // Demo mode - accept any login
+      if (!formData.email || !formData.password) {
+        setError('Vui lòng nhập email và password')
+        return
+      }
+      
+      setLoading(true)
+      // Simulate API call
+      setTimeout(() => {
+        localStorage.setItem('token', 'demo-token-' + Date.now())
+        localStorage.setItem('user', JSON.stringify({
+          id: 1,
+          email: formData.email,
+          fullName: 'Demo User'
+        }))
+        setSuccessMessage('✅ Đăng nhập demo thành công!')
+        setFormData({ email: '', password: '' })
+        setLoading(false)
+        // Redirect to dashboard
+        setTimeout(() => window.location.href = '/', 1500)
+      }, 800)
     }
-  }
 
   return (
     <div className="auth-container">
@@ -96,10 +108,8 @@ export function RegisterForm() {
     fullName: ''
   })
   const [successMessage, setSuccessMessage] = useState('')
-
-  const { mutate: register, loading, error } = useMutation(
-    (data: RegisterFormData) => authAPI.register(data.email, data.password, data.fullName)
-  )
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -108,18 +118,31 @@ export function RegisterForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    try {
-      const response: any = await register(formData)
-      localStorage.setItem('token', response.token)
-      localStorage.setItem('user', JSON.stringify(response.user))
-      setSuccessMessage('Đăng ký thành công!')
-      setFormData({ email: '', password: '', fullName: '' })
-      // Redirect to dashboard
-      setTimeout(() => window.location.href = '/dashboard', 1500)
-    } catch (err) {
-      console.error('Registration failed:', err)
+    setError('')
+    
+    if (DEMO_MODE) {
+      // Demo mode - accept any registration
+      if (!formData.email || !formData.password || !formData.fullName) {
+        setError('Vui lòng điền đầy đủ thông tin')
+        return
+      }
+      
+      setLoading(true)
+      // Simulate API call
+      setTimeout(() => {
+        localStorage.setItem('token', 'demo-token-' + Date.now())
+        localStorage.setItem('user', JSON.stringify({
+          id: Math.random(),
+          email: formData.email,
+          fullName: formData.fullName
+        }))
+        setSuccessMessage('✅ Đăng ký demo thành công!')
+        setFormData({ email: '', password: '', fullName: '' })
+        setLoading(false)
+        // Redirect to home
+        setTimeout(() => window.location.href = '/', 1500)
+      }, 800)
     }
-  }
 
   return (
     <div className="auth-container">
