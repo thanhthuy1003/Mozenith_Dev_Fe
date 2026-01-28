@@ -1,7 +1,7 @@
 {
-  "name": "note-schedule-app",
+  "name": "mozenith",
   "version": "1.0.0",
-  "description": "A modern educational scheduling and notes application",
+  "description": "Mozenith - Nền tảng quản lý học tập thông minh với các công cụ đa chức năng",
   "type": "module",
   "scripts": {
     "dev": "vite",

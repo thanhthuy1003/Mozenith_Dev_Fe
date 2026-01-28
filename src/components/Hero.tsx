@@ -1,5 +1,6 @@
 import React from 'react'
 import { ArrowRight, Zap } from 'lucide-react'
+import Logo from './Logo'
 import './Hero.css'
 
 const Hero: React.FC = () => {
@@ -7,11 +8,14 @@ const Hero: React.FC = () => {
     <section className="hero">
       <div className="hero-container">
         <div className="hero-content fade-in">
+          <div className="hero-logo-section">
+            <Logo size={80} />
+          </div>
           <h1 className="hero-title">
             Quản lý lịch học <span>một cách thông minh</span>
           </h1>
           <p className="hero-subtitle">
-            StudyPlus giúp bạn sắp xếp lịch học, quản lý bài tập và tối ưu hóa thời gian học tập với các công cụ đa chức năng
+            Mozenith giúp bạn sắp xếp lịch học, quản lý bài tập và tối ưu hóa thời gian học tập với các công cụ đa chức năng
           </p>
           <div className="hero-buttons">
             <button className="btn btn-primary">
@@ -44,7 +48,7 @@ const Hero: React.FC = () => {
               <div className="phone-notch"></div>
               <div className="phone-screen">
                 <div className="screen-content">
-                  <div className="app-header">StudyPlus</div>
+                  <div className="app-header">Mozenith</div>
                   <div className="app-item">📚 Toán - 14:00</div>
                   <div className="app-item">📖 Tiếng Anh - 15:30</div>
                   <div className="app-item">🔬 Hóa học - 17:00</div>

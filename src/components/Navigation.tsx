@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { Menu, X, BookOpen } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import Logo from './Logo'
 import './Navigation.css'
 
 const Navigation: React.FC = () => {
@@ -9,8 +10,8 @@ const Navigation: React.FC = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <BookOpen size={32} color="#ff9800" />
-          <span>StudyPlus</span>
+          <Logo size={36} />
+          <span>Mozenith</span>
         </div>
 
         <button 

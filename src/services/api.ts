@@ -1,5 +1,5 @@
 /**
- * API Service - Centralized API calls for StudyPlus
+ * API Service - Centralized API calls for Mozenith
  * Connects to backend API endpoints
  */
 

@@ -20,11 +20,16 @@
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
+  gap: 12px;
+  font-size: 1.3rem;
   font-weight: bold;
-  color: #1a1a1a;
+  color: #1890FF;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
 }
 
 .nav-menu {
@@ -41,7 +46,7 @@
 }
 
 .nav-link:hover {
-  color: #ff9800;
+  color: #1890FF;
 }
 
 .menu-toggle {

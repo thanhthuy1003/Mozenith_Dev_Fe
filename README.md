@@ -1,15 +1,15 @@
-# StudyPlus - Ứng dụng Quản lý Lịch Học
+# Mozenith - Nền tảng Quản lý Học tập Thông minh
 
-Một trang web hiện đại để giới thiệu ứng dụng quản lý lịch học và ghi chú đa chức năng.
+Một trang web hiện đại để giới thiệu ứng dụng quản lý học tập đa chức năng với giao diện tuyệt đẹp.
 
 ## 🚀 Tính năng
 
-- **Quản lý Lịch Học**: Sắp xếp lịch học theo tuần, tháng
-- **Ghi chú thông minh**: Tạo ghi chú và tóm tắt bài học
-- **Thống kê tiến độ**: Theo dõi hiệu quả học tập
-- **Thông báo thông minh**: Nhận thông báo kịp thời
-- **Học tập cộng đồng**: Chia sẻ ghi chú với bạn bè
-- **Dashboard hiện đại**: Giao diện trực quan và dễ sử dụng
+- **Quản lý Lịch Học**: Sắp xếp lịch học thông minh
+- **Quản lý Bài tập**: Theo dõi tiến độ bài tập
+- **Thống kê chi tiết**: Theo dõi hiệu quả học tập
+- **Thông báo thời gian thực**: Nhận thông báo kịp thời
+- **Cộng đồng học tập**: Chia sẻ tài liệu với bạn bè
+- **Dashboard toàn diện**: Giao diện hiện đại và trực quan
 
 ## 📋 Yêu cầu
 

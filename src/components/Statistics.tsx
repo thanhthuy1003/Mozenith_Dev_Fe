@@ -34,7 +34,7 @@ const Statistics: React.FC = () => {
             <div className="stats-items">
               <div className="stats-item">
                 <div className="stats-item-header">
-                  <BarChart3 size={24} color="#ff9800" />
+                  <BarChart3 size={24} color="#1890FF" />
                   <h4>Lịch học đã hoàn thành</h4>
                 </div>
                 <p>Bạn đã hoàn thành 24 lịch học trong tuần này, tăng 12% so với tuần trước.</p>
