@@ -263,3 +263,31 @@
     font-size: 1.5rem;
   }
 }
+
+/* Loading and Error States */
+.loading-spinner {
+  text-align: center;
+  padding: 30px;
+  color: #ff9800;
+  font-weight: 600;
+  animation: pulse 1.5s infinite;
+}
+
+.error-message {
+  background-color: #fee;
+  border-left: 4px solid #f44;
+  color: #c33;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
