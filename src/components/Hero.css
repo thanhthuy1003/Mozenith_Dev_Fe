@@ -1,0 +1,171 @@
+.hero {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  padding-top: 20px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Mockup Styles */
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mockup {
+  perspective: 1000px;
+}
+
+.phone {
+  width: 280px;
+  height: 560px;
+  background: #000;
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3),
+              0 0 60px rgba(255, 152, 0, 0.1);
+  position: relative;
+  transform: rotateY(-15deg) rotateX(10deg);
+  transition: transform 0.3s ease;
+}
+
+.phone:hover {
+  transform: rotateY(-10deg) rotateX(5deg);
+}
+
+.phone-notch {
+  width: 100%;
+  height: 25px;
+  background: #000;
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-top: 35px;
+}
+
+.screen-content {
+  padding: 15px;
+  flex: 1;
+}
+
+.app-header {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff9800;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.app-item {
+  background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-stats {
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .phone {
+    transform: rotateY(0) rotateX(0);
+  }
+
+  .phone:hover {
+    transform: scale(1.05);
+  }
+}

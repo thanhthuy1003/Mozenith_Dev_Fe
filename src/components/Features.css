@@ -1,0 +1,74 @@
+.features {
+  background: white;
+  padding: 80px 20px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f0f0 100%);
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 152, 0, 0.1);
+  cursor: pointer;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(255, 152, 0, 0.2);
+  border-color: #ff9800;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: white;
+  font-size: 0;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.gradient-0 { background: linear-gradient(135deg, #1e90ff 0%, #0066ff 100%); }
+.gradient-1 { background: linear-gradient(135deg, #9d4edd 0%, #7209b7 100%); }
+.gradient-2 { background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%); }
+.gradient-3 { background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); }
+.gradient-4 { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
+.gradient-5 { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
+
+.feature-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.feature-description {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-card {
+    padding: 30px 20px;
+  }
+}
