@@ -2,8 +2,8 @@ import './App.css'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import Features from './components/Features'
-import Dashboard from './components/Dashboard'
-import Statistics from './components/Statistics'
+// Đã xóa import Dashboard
+// Đã xóa import Statistics
 import Pricing from './components/Pricing'
 import Footer from './components/Footer'
 
@@ -13,8 +13,8 @@ function App() {
       <Navigation />
       <Hero />
       <Features />
-      <Dashboard />
-      <Statistics />
+      {/* Đã xóa <Dashboard /> */}
+      {/* Đã xóa <Statistics /> */}
       <Pricing />
       <Footer />
     </div>

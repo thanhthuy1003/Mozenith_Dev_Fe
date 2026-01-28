@@ -23,8 +23,8 @@ const Navigation: React.FC = () => {
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <a href="#features" className="nav-link">Tính năng</a>
-          <a href="#dashboard" className="nav-link">Dashboard</a>
-          <a href="#statistics" className="nav-link">Thống kê</a>
+          {/* Đã xóa link Dashboard */}
+          {/* Đã xóa link Thống kê */}
           <a href="#pricing" className="nav-link">Giá cả</a>
           <button className="btn btn-primary">Đăng nhập</button>
         </div>

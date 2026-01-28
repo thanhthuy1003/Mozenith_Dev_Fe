@@ -1,5 +1,5 @@
 import React from 'react'
-import { Calendar, BookMarked, BarChart3, Bell, Users, Zap } from 'lucide-react'
+import { Calendar, BookMarked, Bell, Zap } from 'lucide-react' // Đã bỏ BarChart3 và Users
 import './Features.css'
 
 interface Feature {
@@ -24,22 +24,10 @@ const Features: React.FC = () => {
       gradient: 'from-purple-400 to-purple-600'
     },
     {
-      icon: <BarChart3 size={32} />,
-      title: 'Thống kê tiến độ',
-      description: 'Theo dõi tiến độ học tập với các biểu đồ chi tiết và phân tích hiệu quả',
-      gradient: 'from-orange-400 to-orange-600'
-    },
-    {
       icon: <Bell size={32} />,
       title: 'Thông báo thông minh',
       description: 'Nhận thông báo kịp thời về lịch học, bài tập sắp tới và mục tiêu học tập',
       gradient: 'from-red-400 to-red-600'
-    },
-    {
-      icon: <Users size={32} />,
-      title: 'Học tập cộng đồng',
-      description: 'Chia sẻ ghi chú, tạo nhóm học tập cùng bạn bè và những người cùng quan tâm',
-      gradient: 'from-green-400 to-green-600'
     },
     {
       icon: <Zap size={32} />,
