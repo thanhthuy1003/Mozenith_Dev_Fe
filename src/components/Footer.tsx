@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             <div className="footer-section">
               <div className="footer-logo">
                 <BookOpen size={32} color="#ff9800" />
-                <span>StudyPlus</span>
+                <span>Mozenith</span>
               </div>
               <p>Ứng dụng quản lý lịch học đa chức năng giúp bạn tối ưu hóa thời gian học tập.</p>
               <div className="social-links">
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               <h4>Liên hệ</h4>
               <div className="contact-item">
                 <Mail size={18} />
-                <span>contact@studyplus.com</span>
+                <span>contact@mozenith.com</span>
               </div>
               <div className="contact-item">
                 <Phone size={18} />
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="contact-item">
                 <MapPin size={18} />
-                <span>Hà Nội, Việt Nam</span>
+                <span>Hồ Chí Minh, Việt Nam</span>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
           <div className="footer-bottom">
             <div className="footer-divider"></div>
             <p className="footer-copyright">
-              © 2024 StudyPlus. Tất cả các quyền được bảo lưu.
+              © 2026 Mozenith. Tất cả các quyền được bảo lưu.
             </p>
           </div>
         </div>
