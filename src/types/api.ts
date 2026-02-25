@@ -68,20 +68,23 @@ export interface User {
   identity_Card?: string;
   role: string;
   status?: string;
+  packageType?: "BASIC" | "PREMIUM";
+  remainingToday?: number;
   createdAt?: string;
   updatedAt?: string;
   emailVerified?: boolean;
 }
 
-export interface PaginatedUsers {
-  content: User[];
-  totalElements: number;
-  totalPages: number;
+export interface PageInfo {
   size: number;
   number: number;
-  first: boolean;
-  last: boolean;
-  empty: boolean;
+  totalElements: number;
+  totalPages: number;
+}
+
+export interface PaginatedUsers {
+  content: User[];
+  page: PageInfo;
 }
 
 // ============================================

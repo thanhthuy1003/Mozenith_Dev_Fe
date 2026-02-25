@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { TopBar } from "@/components/dashboard";
 import { useAuth } from "@/contexts/auth-context";
-import { useUsers } from "@/hooks/use-users";
+import { useUsers, useUpdateUserPackage } from "@/hooks/use-users";
 import { ROLES, PAGINATION } from "@/lib/constants";
 import {
   Card,
@@ -20,8 +20,10 @@ import {
   EmptyState,
   Pagination,
   Alert,
+  Select,
 } from "@/components/ui";
-import { Users, Mail, Phone, Calendar, Shield } from "lucide-react";
+import { PackageType } from "@/lib/api/users";
+import { Users, Mail, Phone, Calendar, Shield, Package } from "lucide-react";
 import { formatDate } from "@/lib/utils";
 
 export default function UsersPage() {
@@ -32,6 +34,11 @@ export default function UsersPage() {
   const [pageSize, setPageSize] = useState(PAGINATION.DEFAULT_SIZE);
 
   const { data, isLoading, error } = useUsers({ page, size: pageSize });
+  const updatePackageMutation = useUpdateUserPackage();
+
+  const handlePackageChange = (userId: number, packageType: PackageType) => {
+    updatePackageMutation.mutate({ userId, data: { packageType } });
+  };
 
   if (!isAdmin) {
     return (
@@ -107,6 +114,7 @@ export default function UsersPage() {
                       <TableHead>Phone</TableHead>
                       <TableHead>Roles</TableHead>
                       <TableHead>Status</TableHead>
+                      <TableHead>Package</TableHead>
                       <TableHead>Created</TableHead>
                     </TableRow>
                   </TableHeader>
@@ -164,6 +172,25 @@ export default function UsersPage() {
                           </Badge>
                         </TableCell>
                         <TableCell>
+                          <div className="flex items-center gap-2">
+                            <Package className="h-4 w-4 text-[#666666]" />
+                            <Select
+                              value={user.packageType || "BASIC"}
+                              onChange={(e) =>
+                                handlePackageChange(
+                                  user.userId,
+                                  e.target.value as PackageType,
+                                )
+                              }
+                              disabled={updatePackageMutation.isPending}
+                              className="w-28"
+                            >
+                              <option value="BASIC">Basic</option>
+                              <option value="PREMIUM">Premium</option>
+                            </Select>
+                          </div>
+                        </TableCell>
+                        <TableCell>
                           <div className="flex items-center gap-2 text-sm text-[#666666]">
                             <Calendar className="h-4 w-4" />
                             {user.createdAt ? formatDate(user.createdAt) : "—"}
@@ -175,10 +202,10 @@ export default function UsersPage() {
                 </Table>
                 <div className="border-t border-[#EEEEEE] p-4">
                   <Pagination
-                    currentPage={data.number}
-                    totalPages={data.totalPages}
-                    totalElements={data.totalElements}
-                    pageSize={data.size}
+                    currentPage={data.page.number}
+                    totalPages={data.page.totalPages}
+                    totalElements={data.page.totalElements}
+                    pageSize={data.page.size}
                     onPageChange={setPage}
                     onPageSizeChange={(size) => {
                       setPageSize(size);
